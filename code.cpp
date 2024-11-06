@@ -16,7 +16,7 @@ bool prime(int n) {
 
 int x[17] ,n;
 int nr;
-void Afis()
+void printing()
 {
     for( int j=0;j<=n-2;j++)
         cout<<x[j]<<" ";
@@ -47,13 +47,13 @@ void back(int k){
         x[k]=i;
         if( OK(k) )
             if(Sol(k) and prime(x[0]+x[n-1])){
-                Afis();
+                printing();
             }
             else
                 back(k+1);
     }
 }//search for all the possible sequences
-int main(){
+int main(void){
     int abc = 0;
     while (scanf("%d", &n) != EOF) {
         x[0] = 1;
