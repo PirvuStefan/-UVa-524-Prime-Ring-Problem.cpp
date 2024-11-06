@@ -12,7 +12,7 @@ bool prime(int n) {
     if(n==17 or n==19 or n==23 or n==29 or n==31)
         return true;
     return false;
-}
+}//each number ranges from 1 to 16, so every ( x[i] + x[i+1] ) <= 31 and >= 2
 
 int x[17] ,n;
 int nr;
