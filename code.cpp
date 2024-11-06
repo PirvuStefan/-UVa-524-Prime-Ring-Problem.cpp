@@ -3,7 +3,7 @@
 #include <random>
 #include <algorithm>
 #include <cmath>
-
+//pirvu
 using namespace std;
 
 bool prime(int n) {
@@ -12,7 +12,7 @@ bool prime(int n) {
     if(n==17 or n==19 or n==23 or n==29 or n==31)
         return true;
     return false;
-}//each number ranges from 1 to 16, so every ( x[i] + x[i+1] ) <= 31 and >= 2
+}//each number ranges from 1 to 16, so every possible sum is greater than one and lesser than 32
 
 int x[17] ,n;
 int nr;
@@ -22,7 +22,7 @@ void Afis()
         cout<<x[j]<<" ";
     cout<<x[n-1];
     cout<<endl;
-}
+}//prints the sequence
 
 bool OK(int k){
    // x[1] = 1;
@@ -32,14 +32,14 @@ bool OK(int k){
     if(!prime(x[0]+x[1]))
         return false;
     return true;
-}
+}//checks if the array is a sequence( a permutation where the sum of each node and its adjacent node is a prime number )
 
 bool Sol(int k)
 {
     nr++;
     
     return k == n-1;
-}
+}//check if the sequence is n-1 long, since x[1] is always = 1 ( do not need to check for n )
 
 void back(int k){
     for(int i=2 ; i<=n ; ++i)
@@ -52,7 +52,7 @@ void back(int k){
             else
                 back(k+1);
     }
-}
+}//search for all the possible sequences
 int main(){
     int abc = 0;
     while (scanf("%d", &n) != EOF) {
@@ -60,7 +60,7 @@ int main(){
         if (abc++) putchar('\n');
         printf("Case %d:\n", abc);
         back(1);
-    }
+    }// reading and printing in C prevents showing an additional '\n'
     
     return 0;
 }
